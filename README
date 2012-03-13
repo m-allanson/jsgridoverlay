@@ -1,3 +1,5 @@
 A javascript script for quickly overlaying an image over a page.  Intended to be an update to http://code.google.com/p/jsgridoverlay/
 
 Include the script at the bottom of your page.  Press Ctrl + ; to activate.  Drag an image from your machine to the page to load it in.  Then toggle with Ctrl + ; or adjust opacity with Ctrl + [ and Ctrl + ].  
+
+Try it out on the demo page: http://m-allanson.github.com/jsgridoverlay/
