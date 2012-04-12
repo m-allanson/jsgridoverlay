@@ -157,7 +157,7 @@ function inArray(needle, haystack) {
     //         someMethod: function () { ... }
     //     });
     //     var instance = new MyClass();
-    Toolbox.Base = function () {}
+    Toolbox.Base = function () {};
     Toolbox.Base.extend = extendThis;
 })();
 
@@ -174,14 +174,14 @@ var Model, Controller, View;
 // Stores a representation of the attributes
 // Persists attributes to localStorage
 // Metadata just stored for current session
-
-// get defaults
-// overwrite with anything passed in
-// overwrite with previously saved data
 /**
  * @constructor
  */
 var Model = Toolbox.Base.extend({
+
+	// get defaults
+	// overwrite with anything passed in
+	// overwrite with previously saved data
 	constructor: function (attributes, options) {
 		console.log('Model');
 
@@ -192,7 +192,7 @@ var Model = Toolbox.Base.extend({
 		attributes || (attributes = {});
 		attributes = _.extend(this.attributes, attributes);
 
-		this._load(); // load in any previously saved attributes
+		this._load(); // load in any previously saved attributes (from localStorage)
 		this.set(attributes); // now we have all possible attributes, set them
 	},
 
@@ -274,8 +274,7 @@ var Model = Toolbox.Base.extend({
 // custom overlay model
 var OverlayModel = Model.extend({
 	toggleState: function(){
-		var attr = this.attributes;
-		var state = parseInt(this.get('isActive', 10));
+		var state = parseInt(this.get('isActive'), 10);
 		var newState = state ? 0 : 1;
 
 		this.set( {'isActive': newState} );
@@ -325,7 +324,7 @@ var View = Toolbox.Base.extend({
 
 		// init some vars
 		this._template = template || null;
-		this._model = m = model || null;
+		this._model = model || null;
 		this.id = this._model.attributes.id || null;
 
 		// create element with correct data
@@ -374,7 +373,7 @@ var View = Toolbox.Base.extend({
 
 		if (this._element && this._element.parentNode) {
 			this._element.parentNode.removeChild(this._element);
-	    }
+		}
 	},
 
 	getElement: function() {
@@ -398,8 +397,8 @@ var OverlayView = View.extend({
 		view.dragOverEffects();
 
 		event.stopPropagation();
-	    event.preventDefault();
-	    event.dataTransfer.dropEffect = 'copy';
+		event.preventDefault();
+		event.dataTransfer.dropEffect = 'copy';
 	},
 
 	handleDragLeave: function (view) {
@@ -430,7 +429,7 @@ var OverlayView = View.extend({
 			// now to get the actual image data
 			var files = event.dataTransfer.files; // files is a FileList of File objects.
 			var f = files[0]; // we only want the first one, discard the rest
-		    var reader = new FileReader();
+			var reader = new FileReader();
 
 			reader.onload = function(f) {
 				// sending a data url through the templating function is 
@@ -440,8 +439,8 @@ var OverlayView = View.extend({
 				view.setBackgroundImage();
 			};
 
-		    // Read in the image file as a data URL. 
-		    reader.readAsDataURL(f);
+			// Read in the image file as a data URL. 
+			reader.readAsDataURL(f);
 		} else {
 			// todo: some actual error handling
 			console.log('FileReader not available');
@@ -548,9 +547,9 @@ var AppController = Controller.extend({
 		console.log('appController.handleKeys');
 
 		var toggleKeys = [59, 186, 90]; // ;
-	    var downOpacityKeys = [219, 91, 123]; // [
-	    var upOpacityKeys = [221, 93, 125]; // ]
-	    var allOpacityKeys = downOpacityKeys.concat(upOpacityKeys);
+		var downOpacityKeys = [219, 91, 123]; // [
+		var upOpacityKeys = [221, 93, 125]; // ]
+		var allOpacityKeys = downOpacityKeys.concat(upOpacityKeys);
 
 		if (event.ctrlKey) {
 			console.log('ctrl key');
