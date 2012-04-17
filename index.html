@@ -1,70 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset='utf-8'>
-
-  <title>jsgridoverlay @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #564ff1;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #a9b00e; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #a9b00e; }
-    h3 { text-align: center; color: #a9b00e; }
-    a { color: #a9b00e; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
-
-<body>
-  <a href="https://github.com/m-allanson/jsgridoverlay"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <h1><a href="https://github.com/m-allanson/jsgridoverlay">jsgridoverlay</a></h1>
-
-    <div class="description">
-      A javascript script for quickly overlaying an image over a web page.  
-    </div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jsgridoverlay by m-allanson</title>
     
-    <p>Intended to be an update to <a href="http://code.google.com/p/jsgridoverlay/">http://code.google.com/p/jsgridoverlay/</a>, written by <a href="https://github.com/jeddy3">jeddy3</a>, <a href="https://github.com/thegingerbloke">thegingerbloke</a> and <a href="https://github.com/m-allanson">m-allanson</a></p>
-    <p>Once installed, press Ctrl + ; to activate.  Drag an image from your machine to the page to load it in.  Then toggle with Ctrl + ; or adjust opacity with Ctrl + [ and Ctrl + ].  </p>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jsgridoverlay</h1>
+        <p>A standalone javascript script to overlay an image onto a webpage.</p>
+        <p class="view"><a href="https://github.com/m-allanson/jsgridoverlay">View the Project on GitHub <small>m-allanson/jsgridoverlay</small></a></p>
+        <ul>
+          <li><a href="https://github.com/m-allanson/jsgridoverlay/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/m-allanson/jsgridoverlay/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/m-allanson/jsgridoverlay">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>What is it?</h3>
 
-    <p>Try it on this page!</p>
-    
-    <h2>Install</h2>
-    <p>Include the following script at the bottom of your page:</p>
+<p>It's a javascript script for quickly overlaying an image onto a page.  You can adjust the transparency if you like, which makes it handy for comparing a page to an existing layout.  Made out of plain old javascript so doesn't have any dependencies or require any other libraries.</p>
 
-    <pre>https://raw.github.com/m-allanson/jsgridoverlay/master/grid.js</pre>
+<h3>How does it work?</h3>
 
-    <h2>Download</h2>
-    <p>
-      You can download this project <a href="https://raw.github.com/m-allanson/jsgridoverlay/master/grid.js">here</a>.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/m-allanson/jsgridoverlay</pre>
-    </p>
+<p>Include the following line at the bottom of your page:</p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/m-allanson/jsgridoverlay">m-allanson/jsgridoverlay</a>
+<p><code>&lt;script type="text/javascript" src="<a href="https://raw.github.com/m-allanson/jsgridoverlay/master/grid.js&quot;&gt;&lt;/script">https://raw.github.com/m-allanson/jsgridoverlay/master/grid.js"&gt;&lt;/script</a>&gt;</code></p>
+
+<p>Once installed, add an image like this:</p>
+
+<ul>
+<li>Press <code>Ctrl + ;</code> to activate a blank overlay.</li>
+<li>Drag an image from your computer and drop it on the blank overlay.</li>
+</ul><p>Then make adjustments with these shortcuts:</p>
+
+<ul>
+<li>Toggle with <code>Ctrl + ;</code>
+</li>
+<li>Adjust opacity with <code>Ctrl + [</code> and <code>Ctrl + ]</code>.</li>
+</ul><p>Press <code>Ctrl + ;</code> to try it right now. (this is currently not true)</p>
+
+<h3>Where do I get it?</h3>
+
+<p>Right here on GitHub: <a href="https://github.com/m-allanson/jsgridoverlay">https://github.com/m-allanson/jsgridoverlay</a></p>
+
+<h3>Anything else?</h3>
+
+<p>This script is originally based on the jQuery plugin <a href="http://code.google.com/p/jsgridoverlay/">jsgridoverlay</a>, written by <a href="https://github.com/jeddy3">jeddy3</a>, <a href="https://github.com/thegingerbloke">thegingerbloke</a> and <a href="https://github.com/m-allanson">m-allanson</a></p>
+
+<p>This script is also a bit of an experiment, makes no attempt to support older browsers and has had minimal amounts of testing (unlike the original version linked above).  However any suggestions for improvements are welcome!</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/m-allanson">m-allanson</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-
-  </div>
-  <script type="text/javascript" src="https://raw.github.com/m-allanson/jsgridoverlay/master/grid.js"></script>
-</body>
+    <script src="javascripts/scale.fix.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/m-allanson/jsgridoverlay/master/grid.js"></script>
+  </body>
 </html>
