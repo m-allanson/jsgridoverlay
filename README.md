@@ -21,10 +21,6 @@ Then make adjustments with these shortcuts:
 
 You can try it out on the [demo page](http://m-allanson.github.com/jsgridoverlay/)
 
-### Where do I get it?
-
-Right here on GitHub: [https://github.com/m-allanson/jsgridoverlay](https://github.com/m-allanson/jsgridoverlay)
-
 ### Anything else?
 
 This script is originally based on the jQuery plugin [jsgridoverlay](http://code.google.com/p/jsgridoverlay/), written by [jeddy3](https://github.com/jeddy3), [thegingerbloke](https://github.com/thegingerbloke) and [m-allanson](https://github.com/m-allanson)
