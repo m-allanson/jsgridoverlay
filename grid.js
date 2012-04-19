@@ -324,7 +324,49 @@
 			var toggleKeys = [59, 186, 90]; // ;
 			var downOpacityKeys = [219, 91, 123]; // [
 			var upOpacityKeys = [221, 93, 125]; // ]
+			var arrowKeys = [72, 74, 75, 76]; // h j k l
 			var allOpacityKeys = downOpacityKeys.concat(upOpacityKeys);
+console.log(event.which);
+
+
+			// deal with positioning 
+			if (inArray(event.which, arrowKeys)) {
+				console.log('arrowKey');
+				
+				var modifier = event.ctrlKey ? 10 : 1; // move in 1 or 10px jumps
+				var backgroundPosition = myModel.get('backgroundPosition');
+
+				// split background pos into two numbers
+				var temp = backgroundPosition.split(' ');
+				temp[0] = parseInt(temp[0], 10);
+				temp[1] = parseInt(temp[1], 10);
+
+
+				switch (event.which) {
+					case 72: 
+						temp[0] -= modifier; // go west!
+						break;
+
+					case 74: 
+						temp[1] += modifier; // go down
+						break;
+
+					case 75: 
+						temp[1] -= modifier; // go up
+						break;
+
+					case 76: 
+						temp[0] += modifier; // go right
+						break;
+				}
+
+				backgroundPosition = temp[0] + 'px ' + temp[1] + 'px';
+
+				myModel.set( {backgroundPosition: backgroundPosition} );
+
+				// show the changes
+				myView.update();
+			}
 
 			if (event.ctrlKey) {
 				console.log('ctrl key');
@@ -544,7 +586,7 @@
 	var myData = {
 		id: 'test-id',
 		opacity: 0.5,
-		backgroundPosition: 'top left',
+		backgroundPosition: '0px 0px',
 		backgroundColor: 'green',
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'auto',
@@ -581,5 +623,8 @@
 
 // TODO: namespace all this proper like - amd js module definition?
 // TODO: make it work with closure compiler advanced mode?
+// TODO: fail silently on older browsers
+// TODO: test in firefox / safari / ie etc.  write some tests?
+// TODO: clear all data
 })(); // exec anon func
 
