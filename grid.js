@@ -96,8 +96,12 @@
 	// attempt to get the height of the document
 	// see http://andylangton.co.uk/articles/javascript/get-viewport-size-javascript/
 	var getDocHeight = function(){
-		var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0];
-		return w.innerWidth||e.clientWidth||g.clientWidth;
+		var d = document;
+	    return Math.max(
+	        Math.max(d.body.scrollHeight, d.documentElement.scrollHeight),
+	        Math.max(d.body.offsetHeight, d.documentElement.offsetHeight),
+	        Math.max(d.body.clientHeight, d.documentElement.clientHeight)
+	    );
 	};
 
 	// An almost standalone implementation of backbone's extend.
